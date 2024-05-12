@@ -35,6 +35,10 @@ const eq = document.getElementById("eq");
 eq.addEventListener("click", () => {
   operandB = currentNumber;
   let result = operate(operandA, operandB, operator);
+  result += "";
+  if ((result + "").length > 9) {
+    result = result.slice(0, 10);
+  }
   display.textContent = result;
 });
 
